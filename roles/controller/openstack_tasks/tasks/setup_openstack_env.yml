@@ -42,7 +42,7 @@
 
 - name: Create virutal env
   pip:
-    virtualenv: "/root/.venv"
+    virtualenv: "~/openstack_virtual/.venv"
     name: "{{ item.name }}"
     extra_args: '--upgrade'
   with_items:
