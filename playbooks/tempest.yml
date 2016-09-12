@@ -1,11 +1,11 @@
 ---
 
 - name: Creates network
-  hosts: controller
+  hosts: undercloud
   roles:
     - { role: controller/openstack_tasks, create_external_network: True, setup_openstack_env: True }
 
 - name: Tempest installation and configuration
-  hosts: tester
+  hosts: undercloud
   roles:
     - tester/tempest
