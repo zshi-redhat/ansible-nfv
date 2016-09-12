@@ -87,7 +87,7 @@
 
 - name: Get network-id
   vars:
-    ansible_python_interpreter: "/mnt/tempest/.venv/bin/python"
+    ansible_python_interpreter: "{{ tempest_dir }}/tempest/.venv/bin/python"
   os_networks_facts:
     cloud: openstack
     name:  external
@@ -100,7 +100,7 @@
 
 - name: Run config_tempest script
   vars:
-    ansible_python_interpreter: "/mnt/tempest/.venv/bin/python"
+    ansible_python_interpreter: "{{ tempest_dir }}/tempest/.venv/bin/python"
   shell: '{{ tempest_dir }}/tempest/.venv/bin/python {{ tempest_dir }}/tempest/tools/config_tempest.py --create --debug --image {{ osp_image }} identity.uri {{ osp_auth.stdout }} identity.admin_password {{ osp_password.stdout }}  --network-id {{ openstack_networks.id }}'
   args:
     chdir: '{{ tempest_dir }}/tempest'
@@ -122,5 +122,5 @@
   when: port_vnic_type == 'True'
 
 - name: Run TestServerBasicOps Test
-  shell: "source /home/stack/overcloudrc;source /mnt/tempest/.venv/bin/activate;cd /mnt/tempest;/usr/bin/bash /mnt/tempest/tools/run-tests.sh tempest.scenario.test_server_basic_ops.TestServerBasicOps >> /mnt/tempest/tempest-output.txt"
+  shell: "source /home/stack/overcloudrc;source {{ tempest_dir }}/tempest/.venv/bin/activate;cd {{ tempest_dir }}/tempest;/usr/bin/bash {{ tempest_dir }}/tempest/tools/run-tests.sh tempest.scenario.test_server_basic_ops.TestServerBasicOps >> {{ tempest_dir }}/tempest/tempest-output.txt"
   when: TestServerBasicOps == 'Run'
