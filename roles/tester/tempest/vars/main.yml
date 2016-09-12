@@ -1,7 +1,7 @@
 ---
 
 ### variables
-tempest_dir: /mnt
+tempest_dir: ~/tempest
 image_ssh_user: cloud-user
 
 ### Static variables
