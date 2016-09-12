@@ -12,5 +12,5 @@ cidr: 10.10.10.0/24
 dns_nameservers: 10.35.28.28
 
 ## Openstack variables
-keystone: /root/keystonerc_admin
+keystone: /home/stack/overcloudrc
 

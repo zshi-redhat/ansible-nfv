@@ -10,7 +10,7 @@ plugin_url: https://review.gerrithub.io/redhat-openstack/tempest-nfv-plugin
 
 ### Openstack variables
 osp_image: http://file.tlv.redhat.com/~itbrown/images/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
-keystone: /root/keystonerc_admin
+keystone: /home/stack/overcloudrc
 
 ## Port_vnic_type direct
 port_vnic_type: False
