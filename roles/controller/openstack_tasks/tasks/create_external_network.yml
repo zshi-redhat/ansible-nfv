@@ -8,9 +8,9 @@
     name: external
     state: present
     external: true
-    provider_network_type: "{{ provider_network_type }}"
-    provider_physical_network: "{{ provider_physical_network }}"
-    provider_segmentation_id: "{{ provider_segmentation_id }}"
+#    provider_network_type: "{{ provider_network_type }}"
+#    provider_physical_network: "{{ provider_physical_network }}"
+#    provider_segmentation_id: "{{ provider_segmentation_id }}"
   register: openstack_networks
 
 - name: Create subnet
