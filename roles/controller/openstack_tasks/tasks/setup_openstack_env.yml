@@ -18,7 +18,7 @@
 
 - name: Creating Openstack env folder
   file:
-    path: /etc/openstack
+    path: ~/.config/openstack
     state: directory
     mode: 0755
 
@@ -55,5 +55,5 @@
 - name: Create the clouds.yml file for future tasks
   template:
     src: "clouds.yml.j2"
-    dest: "/etc/openstack/clouds.yml"
+    dest: "~/.config/openstack/clouds.yml"
     mode: 0755
