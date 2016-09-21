@@ -87,7 +87,7 @@
 
 - name: Get network-id
   vars:
-    ansible_python_interpreter: "~/tempest/tempest/.venv/bin/python"
+    ansible_python_interpreter: "/home/stack/tempest/tempest/.venv/bin/python"
   os_networks_facts:
     cloud: openstack
     name:  external
@@ -100,7 +100,7 @@
 
 - name: Run config_tempest script
   vars:
-    ansible_python_interpreter: "~/tempest/tempest/.venv/bin/python"
+    ansible_python_interpreter: "/home/stack/tempest/tempest/.venv/bin/python"
   shell: '{{ tempest_dir }}/tempest/.venv/bin/python {{ tempest_dir }}/tempest/tools/config_tempest.py --create --debug --image {{ osp_image }} identity.uri {{ osp_auth.stdout }} identity.admin_password {{ osp_password.stdout }}  --network-id {{ openstack_networks.id }}'
   args:
     chdir: '{{ tempest_dir }}/tempest'
