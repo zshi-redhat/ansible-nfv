@@ -2,7 +2,7 @@
 
 - name: Create router
   vars:
-    ansible_python_interpreter: "~/openstack_virtual/.venv/bin/python"
+    ansible_python_interpreter: "/home/stack/openstack_virtual/.venv/bin/python"
   os_router:
     cloud: openstack  
     name: router1
